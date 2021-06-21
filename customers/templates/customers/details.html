@@ -1,0 +1,49 @@
+{% extends 'customers/base.html'%}
+{% load static %}
+
+{% block content %}
+
+<div class="col-sm-10">
+  <h3 class="text-white my-5">Details</h3>
+
+
+
+<h4 class="text-white my-5">Display Information</h4>
+{% if cust %}
+<table class="table table-hover bg-white">
+<thead>
+<tr class="text-center">
+<th scope="col" style="width:30%">Cust ID</th>
+<th scope="col" style="width:25%">Name</th>
+<th scope="col" style="width:35%">Email</th>
+<th scope="col" style="width:10%">Balance</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td scope="row">{{cust.custid}}</td>
+<td>{{cust.name}}</td>
+<td>{{cust.email}}</td>
+<td>{{cust.balance}}</td>
+
+</tr>
+
+</tbody>
+</table>
+{% endif %}
+
+</div>
+
+
+{% endblock content %}
+
+{% block content1 %}
+<div class="row">
+<div class="col-sm-4 text-center">
+
+<a href="{% url 'transaction' cust.custid %}" class="btn btn-success">Make Transaction </a>
+</div>
+</div>
+{% endblock %}

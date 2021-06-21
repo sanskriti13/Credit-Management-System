@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'customers/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'customers/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'customers/css/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'customers/css/style1.css' %}" />
+    
+  </head>
+  <body>
+      {% include 'customers/navbar.html' %}
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12"></div>
+          {% block message %} {% endblock %}
+        </div>
+        <div class="row">
+          {% block side %} {% endblock %} {% block content %} {% endblock %}
+        </div>
+      </div>
+    
+    {% block content1 %} {% endblock %}
+
+    <script src="{% static 'customers/js/jquery.js' %}"></script>
+    <script src="{% static 'customers/js/popper.js' %}"></script>
+    <script src="{% static 'customers/js/bootstrap.js' %}"></script>
+    <script src="{% static 'customers/js/all.min.js' %}"></script>
+  </body>
+</html>

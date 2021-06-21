@@ -1,0 +1,40 @@
+{% extends 'customers/base.html'%}
+{% load static %}
+
+{% block content%}
+<div class="col-sm-10">
+<h3 class="text-white my-5 ">Make Transaction</h3>
+<form action="{% url 'transaction' id %}" method="POST">
+{% csrf_token %}
+<div class="form-group " style="color:rgb(177,168,168);">
+      <label for="inputState">Receiver</label>
+      <select id="inputState" class="form-control" name= "receiver">
+      <option value="">Choose</option>
+        {% for opt in cust%}
+        <option value={{opt.custid}}> {{opt.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1" style="color:rgb(177,168,168); ">Amount</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0"  name="amount" style="background-color:rgb(177,168,168);">
+  </div>
+
+  
+
+  
+
+    <button type="submit" class="btn btn-dark">Submit</button>
+    
+</form>
+<br><br>
+<h3></h3>
+</div>
+
+
+
+
+{% endblock %}

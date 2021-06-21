@@ -1,0 +1,28 @@
+{% extends 'customers/base.html'%}
+{% load static %}
+
+{% block content1 %}
+
+<div class="container-fluid">
+
+<div class="row">
+{% if cust %}
+{% for c in cust %}
+<div class="col-md-4">
+<div class="card bg-dark offset-md-2" style="width: 20rem; length: 60rem;">
+  <img src="{{c.img.url}}" class="card-img-top img-fluid" alt="...">
+  <div class="card-body ">
+    <h5 class="card-title">{{c.name}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 'details' c.custid %}" class="btn btn-primary">View Details</a>
+  </div>
+  </div>
+
+</div>
+
+
+{% endfor %}
+{% endif %}
+</div>
+</div>
+{% endblock %}
